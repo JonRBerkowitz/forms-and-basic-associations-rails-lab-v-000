@@ -23,7 +23,6 @@ class Song < ActiveRecord::Base
     notes.each do |content|
       if content != ''
         note = Note.build(content: content)
-        note.save
         self.notes << note
       end
     end
