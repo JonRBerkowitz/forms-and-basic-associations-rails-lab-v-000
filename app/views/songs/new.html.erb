@@ -4,7 +4,7 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br />
-  <%f.label :song_genre_id %>
-  <%= f.collection_select :genre, Genre.all, :id, :name %>
+  <%f.label :genre %>
+  <%= f.collection_select :genre, Genre.all, :id, :name, :song_genre_id %>
   <%= f.submit %>
 <% end %>
