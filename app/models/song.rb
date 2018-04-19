@@ -19,9 +19,10 @@ class Song < ActiveRecord::Base
     self.artist = Artist.find_or_create_by(name: name)
   end
 
-  def notes=(notes)
-    notes.each do |note|
-      song = Song.find(id)
+  def note_contents=(notes)
+    notes.each do |content|
+      note = Note.new(:content content)
+      note.save
       self.notes << note
     end
   end
